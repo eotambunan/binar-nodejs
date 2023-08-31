@@ -12,7 +12,7 @@ class Animal {
 
   async connect() {
     const file = await fs.readFile("./database/mamalia.json", { encoding: "utf-8" });
-    return JSON.parse(file);
+    return eval(file);
   }
 
   async findAll() {
@@ -27,7 +27,7 @@ class Animal {
     try {
       const data = await this.connect();
       data.push(body);
-      await fs.writeFile("./database/mamalia.json", data);
+      await fs.writeFile("./database/mamalia.json",  JSON.stringify(data,null,2));
     } catch (error) {
       console.error(error);
     }
