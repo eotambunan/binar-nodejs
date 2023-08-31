@@ -6,5 +6,8 @@ class MamaliaService{
     getSuara(){
         this.mamaliaModel.suaraAnimal()
     }
+    async getAll(){
+        return await this.mamaliaModel.findAll()
+    }
 }
 module.exports = MamaliaService

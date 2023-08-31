@@ -1,6 +1,13 @@
 const MamaliaController = require("./class/controller/mamalia.controller")
-function main(){
-    const mamaliaController = new MamaliaController()
-    mamaliaController.getSuara()
+async function main(){
+    try {
+        const mamaliaController = new MamaliaController()
+        mamaliaController.getSuara()
+        const mamalias = await mamaliaController.getAll()       
+        console.log(mamalias);
+    } catch (error) {
+        console.error(error);
+    }
+
 }
 main()

@@ -6,5 +6,9 @@ class MamaliaController{
     getSuara(){
         this.mamaliaService.getSuara()
     }
+    async getAll(){
+        return await this.mamaliaService.getAll()
+    }
+
 }
 module.exports = MamaliaController
